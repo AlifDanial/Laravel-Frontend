@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+
+class CreateCropTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('crop', function(Blueprint $table)
+		{
+			$table->integer('CropID')->primary();
+			$table->string('CropName');
+			$table->integer('CropAddedDate');
+			$table->integer('CropEditedDate');
+		});
+	}
+
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('crop');
+	}
+
+}
