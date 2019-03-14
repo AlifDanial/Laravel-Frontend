@@ -1,5 +1,7 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,300,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 .navbar {
     -webkit-box-shadow: 0 8px 6px -6px #DBDBDB;
@@ -24,11 +26,7 @@
 .navbar-item{
   padding-left:10px;
 }
-
-@media(max-width:425px){
-.navbar nav{
-  width:100%;
-}
+@media(max-width:375px){
 
 .nav-link a{
   padding-left:2px;
@@ -50,7 +48,7 @@
   }
 
   .navbar-item{
-  padding-left:3px;
+  padding-left:4px;
 }
   
 .image-navbar{
@@ -66,11 +64,70 @@
  }
 }/*end width 425 condition*/
 
+@media only screen and (max-width: 320px){
 
-@media(max-width: 767px){
+.nav-link a{
+  padding-left:2px;
+}
+
+  ::-webkit-input-placeholder {
+  font-size: 10px;
+}
+.container{
+  padding-left:4px;
+  padding-right:4px;
+}
+.navbar-brand{
+  font-family:'montserrat';
+  font-size:15px;
+  font-weight:700;
+  margin-left:10px;
+  margin-right:0px;
+  }
 
   .navbar-item{
-  padding-left:3px;
+  padding-left:4px;
+}
+  
+.image-navbar{
+  width:50px;
+  height:30px; 
+}
+.form-inline input {
+   width: 50px;
+   height: 25px;
+   margin-left:10px;
+   padding:4px;
+   padding-bottom:9px;
+ }
+}/*end width 425 condition*/
+
+@media only screen and (max-width: 425px) and (min-width: 376px){
+.navbar nav{
+  width:100%;
+}
+
+.nav-link a{
+  padding-left:2px;
+}
+
+  ::-webkit-input-placeholder {
+  font-size: 11px;
+}
+.container{
+  padding-left:4px;
+  padding-right:4px;
+}
+.navbar-brand{
+  font-family:'montserrat';
+  font-size:15px;
+  font-weight:700;
+  margin-left:10px;
+  margin-right:0px;
+  }
+
+  .navbar-item{
+  padding-left:5px;
 }
   
 .image-navbar{
@@ -78,12 +135,20 @@
   height:30px; 
 }
 .form-inline input {
-   width: 70px;
+   width: 100px;
    height: 25px;
    margin-left:10px;
    padding:4px;
    padding-bottom:9px;
  }
+}/*end width 425 condition*/
+
+
+@media only screen and (max-width: 768px) and (min-width: 426px){
+
+  .navbar-item{
+  padding-left:3px;
+}
  
 }  /*end width 767 condition*/
 

@@ -23,7 +23,7 @@
 </head>
 <body>
         @include ('inc.navbar')
-        <ul class="navbar-nav ml-auto">
+        
         <!--here for menu-->
         <div class="message">
         @include('inc.messages')
