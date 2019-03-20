@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Iluminate\Database\MySqlConnection;
+use DB;
 
 class SearchController extends Controller
 {
@@ -19,17 +21,40 @@ class SearchController extends Controller
      */
     public function searchCrops()
     {
+        $context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
         $url = 'http://35.199.47.68/db_api/api.php/records/crop_info?';
-        $data = file_get_contents($url);
+        $data = file_get_contents($url, false, $context);
         $crops = json_decode($data, true)['records'];
 
         $cropName = Input::get ( 'cropName' );
-        $result = collect($crops)->where ('name_var_lndrce', $cropName);
+        $search_crop = collect($crops)->where ('name_var_lndrce', $cropName);
 
-        return view ( 'pages.search' )->with('result', $result);
-        
+        return view ( 'pages.searchCrop' )->with('search_crop', $search_crop);
     }
- 
-   
+
+    /**
+     * Search for crops and threads
+     */
+    public function search()
+    {
+        $text = Input::get ( 'text' );
+
+        $context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
+        $url = 'http://35.199.47.68/db_api/api.php/records/crop_info?';
+        $data = file_get_contents($url, false, $context);
+        $crops = json_decode($data, true)['records'];
+        $search_crop = collect($crops)->where ('name_var_lndrce', $text);
+
+        $search_thread = DB::table('thread')
+                            ->selectRaw("*")
+                            ->whereRaw("MATCH(threadSubject,threadDescription) AGAINST ('$text' IN NATURAL LANGUAGE MODE)")
+                            ->get();
+
+        $search_thread = json_decode(json_encode($search_thread, true));
+        $data = array('text' => $text);
+
+        return view ( 'pages.search', $data)->with('search_crop', $search_crop)->with('search_thread', $search_thread);
+    }
+
 
 }

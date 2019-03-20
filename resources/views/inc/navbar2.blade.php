@@ -193,12 +193,12 @@
         <li class="nav-item">
           <!--<a class="nav-link" style="font-family:7 - 1'montserrat';font-size:18px;" href="#">Home <span class="sr-only">(current)</span></a>-->
           <a class="navbar-item" href="/index">
-            <img src="{{URL::asset('/svg/Symbol 7 – 1.svg')}}" class="image-navbar" alt="">
+            <img src="{{URL::asset('/svg/Symbol 3 – 1.svg')}}" class="image-navbar" alt="">
           </a>
         </li>
         <li class="nav-item">
            <!--<a class="nav-link" style="font-family:6 - 1'montserrat';font-size:18px;" href="#">Link</a>-->
-           <a class="navbar-item" href="/crops">
+           <a class="navbar-item" href="/crop">
             <img src="{{URL::asset('/svg/Symbol 4 – 1.svg')}}" class="image-navbar" alt="">
           </a>
         </li>
@@ -212,9 +212,9 @@
        <input type="text" placeholder="Crop Name" name="cropName">
        <button type="submit" class="btn btn-default">Search</button> 
     </form>-->
-      <form class="form-inline" action="/search/thread" method="post" role="search">
+      <form class="form-inline" action="/search" method="post" role="search">
       {{ csrf_field() }}
-       <input class="form-control" type="text" placeholder="Search CFFforum" name="thread" style="border-radius:10px;" autocomplete="off">
+       <input class="form-control" type="text" placeholder="Search CFFforum" name="text" style="border-radius:10px;" autocomplete="off">
        <input type="submit" 
        style="position: absolute; left: -9999px; width: 1px; height: 1px;"
        tabindex="-1" />

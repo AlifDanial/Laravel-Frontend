@@ -199,7 +199,7 @@
         <li class="nav-item">
            <!--<a class="nav-link" style="font-family:6 - 1'montserrat';font-size:18px;" href="#">Link</a>-->
            <a class="navbar-item" href="/crops">
-            <img src="{{URL::asset('/svg/Symbol 4 – 1.svg')}}" class="image-navbar" alt="">
+            <img src="{{URL::asset('/svg/Symbol 6 – 1.svg')}}" class="image-navbar" alt="">
           </a>
         </li>
         
@@ -212,7 +212,7 @@
        <input type="text" placeholder="Crop Name" name="cropName">
        <button type="submit" class="btn btn-default">Search</button> 
     </form>-->
-      <form class="form-inline" action="/search/thread" method="post" role="search">
+    <form class="form-inline" action="/search/thread" method="post" role="search">
       {{ csrf_field() }}
        <input class="form-control" type="text" placeholder="Search CFFforum" name="thread" style="border-radius:10px;" autocomplete="off">
        <input type="submit" 

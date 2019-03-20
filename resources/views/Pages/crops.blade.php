@@ -2,40 +2,39 @@
 
 @section ('content')
 <div class="main-body">
-{{-- 
-    <h1 class="text1-left" style="font-size:40px;font-family: 'Montserrat', sans-serif;font-size: 40px;padding-bottom:40px;">{{$thread->ThreadSubject}}</h1> --}}
- 
+
     <div class="navbar">
         <div class="search-container">
-          <form action="/search" method="post" role="search">
+          <form action="/search/crops" method="post" role="search">
             {{ csrf_field() }}
              <input type="text" placeholder="Crop Name" name="cropName">
-             <button type="submit" class="btn btn-default">Search</button> 
+             <button type="submit" class="btn btn-default">Search</button>
           </form>
         </div>
       </div>
-    
-    @foreach ($crops as $crop) 
+
+    @foreach ($crops as $crop)
             <li class="list-group-item">
-            <a href="{{ url('crops/'.$crop['cropID']) }}">{{$crop['name_var_lndrce']}}</a>
-            </li>        
+            <a href="#" style="text-decoration:none;color:black;padding-right:15px;"> <!--start cards -->
+              <div class="card text-center" style="width:190px;border-radius:12px;">
+                  <div class="card-header" style="font-family:'montserrat';color:#6F9E76;padding-bottom:5px;padding-top:8px;">
+                  <a href="{{ url('crops/'.$crop['cropID']) }}">{{$crop['name_var_lndrce']}}</a>
+                  </div>
+                  <div class="card-body" style="padding-top:10px;font-family:'montserrat';">
+                    <p>12356 threads</p>
+                    <p style="font-size:13px;font-weight:500;">20 asked today</p>
+                    <p style="font-size:13px;font-weight:500;">1000 asked this week</p>
+                  </div>
+              </div>
+            </a><!--end one card -->
+            </li>
     @endforeach
 
-    
-    
 
-    
+
+
+
 
 </div>
 
 @endsection
-
-
-{{-- @extends ('layouts.app')
-
-@section('content')
-
-<p> This is a paragraph </p>
-
-
-@endsection --}}

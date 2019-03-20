@@ -35,14 +35,27 @@ Route::get('/profile', function () {
     return view('welcome');
 });
 
+Route::get('/crops', function () {
+    return view('crops.index');
+});
+
+Route::get('/index/create', function () {
+    return view('threads.create');
+});
+
 Route::resource('threads','ThreadsController');
 
-Route::get('/crops', 'PagesController@showCrops');
 
-Route::get('/crops/{id}', 'PagesController@showCropsData');
+Route::get('/crop', 'PagesController@showCrops');
 
-Route::any('/search', 'SearchController@searchCrops');
+Route::get('/crops/{id}', 'PagesController@showCropsData');   //uncomment for real one
+
+
+Route::any('/search', 'SearchController@search');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::any('/search/crops', 'SearchController@searchCrops');
+

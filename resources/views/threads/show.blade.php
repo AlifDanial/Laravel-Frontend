@@ -1,9 +1,24 @@
 @extends ('layouts.app')
 
 @section ('content')
-<div class="main-body">
-{{-- 
-    <h1 class="text1-left" style="font-size:40px;font-family: 'Montserrat', sans-serif;font-size: 40px;padding-bottom:40px;">{{$thread->ThreadSubject}}</h1> --}}
+<head>
+<style>
+.content-wrapper{ /*style for overall page*/
+  width:1080px;
+  margin: 0 auto;
+  padding-top:40px;
+}
+.page-grid{ /*style for card column*/
+  margin-left:50px;
+  margin-top: 20px;
+  width:750px;
+}
+</style>
+</head>
+<div class="content-wrapper">  
+        <div class="page-grid">
+
+    {{--<h1 class="text1-left" style="font-size:40px;font-family: 'Montserrat', sans-serif;font-size: 40px;padding-bottom:40px;">{{$thread->ThreadSubject}}</h1> --}}
 
     
     <div class='card-body'>  
@@ -25,17 +40,7 @@
           {!!Form::close()!!}
 
     </div>
-<br>
 
+      </div>
 </div>
 @endsection
-
-
-{{-- @extends ('layouts.app')
-
-@section('content')
-
-<p> This is a paragraph </p>
-
-
-@endsection --}}
