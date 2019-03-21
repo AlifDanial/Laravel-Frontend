@@ -51,12 +51,16 @@ p{
 .attribute-value .more-text{
         display: none;
 }
+
+.attribute-name .more-text{
+        display: none;
+}
 .row{
     margin-left:1px;
 }
 .attribute-name{
   font-family:'montserrat';
-  font-size:14px;
+  font-size:12px;
 }
 .attribute-value{
   font-family:'montserrat';
@@ -176,23 +180,41 @@ hr.line1{
 </style>
 
 <script type="text/javascript">
-$(document).ready(function(){
-	var maxLength = 30;
-	$(".attribute-value").each(function(){
-		var myStr = $(this).text();
-		if($.trim(myStr).length > maxLength){
-			var newStr = myStr.substring(0, maxLength);
-			var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
-			$(this).empty().html(newStr);
-			$(this).append(' <a href="javascript:void(0);" class="read-more" style="font-size:13px;color:green;">..(expand)</a>');
-			$(this).append('<span class="more-text">' + removedStr + '</span>');
-		}
-	});
-	$(".read-more").click(function(){
-		$(this).siblings(".more-text").contents().unwrap();
-		$(this).remove();
-	});
-});
+    $(document).ready(function(){
+        var maxLength = 21;
+        $(".attribute-value").each(function(){
+            var myStr = $(this).text();
+            if($.trim(myStr).length > maxLength){
+                var newStr = myStr.substring(0, maxLength);
+                var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                $(this).empty().html(newStr);
+                $(this).append(' <a href="javascript:void(0);" class="read-more" style="font-size:13px;color:green;">(..)</a>');
+                $(this).append('<span class="more-text">' + removedStr + '</span>');
+            }
+        });
+        $(".read-more").click(function(){
+            $(this).siblings(".more-text").contents().unwrap();
+            $(this).remove();
+        });
+    });
+
+    $(document).ready(function(){
+        var maxLength = 15;
+        $(".attribute-name").each(function(){
+            var myStr = $(this).text();
+            if($.trim(myStr).length > maxLength){
+                var newStr = myStr.substring(0, maxLength);
+                var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                $(this).empty().html(newStr);
+                $(this).append(' <a href="javascript:void(0);" class="read-more" style="font-size:13px;color:green;">(..)</a>');
+                $(this).append('<span class="more-text">' + removedStr + '</span>');
+            }
+        });
+        $(".read-more").click(function(){
+            $(this).siblings(".more-text").contents().unwrap();
+            $(this).remove();
+        });
+    });
 </script>
 
 </head>
@@ -201,110 +223,63 @@ $(document).ready(function(){
     <div class="page-grid">
 
         <div class="card">
-
+@foreach($crops as $crop)
+    @if($crop['cropID'] == $uid)
+    <?php $cropName = $crop['name_var_lndrce'];?>
+    @break
+    @endif
+@endforeach
             <div class="header">
                 <div class="row" style="margin-left:1px;">
                     <img src="{{URL::asset('/svg/crop.svg')}}" class="image-crop" alt="">
-                    <p class="crop-name">Hibiscus</p>
+                    <p class="crop-name">{{$cropName}}</p>
                 </div>
             </div>
-
+            
             <div class="table-body">
                 <div class="row">
                     <div class="col-left">
+
+                        @for($i=0;$i<6;$i++)
                         <div class="row" style="margin-bottom:5px;">
                             <div class="constant">
-                            <p class="attribute-name">Scientific Name</p>
+                                <p class="attribute-name">{{trim(key($cropsdata))}}</p>
                             </div>
                             &nbsp;&nbsp;
                             <div class="stay">
-                            <p class="attribute-value">Name of it</p>
+                                <p class="attribute-value"><?php
+                                    if (is_NULL($cropsdata[key($cropsdata)]))
+                                        echo "NULL";
+                                    else
+                                        echo trim($cropsdata[key($cropsdata)]);?>
+                                        </p>
                             </div>
-                        </div><!--ends contem row -->
-                        <div class="row" style="margin-bottom:5px;">
-                            <div class="constant">
-                            <p class="attribute-name">Scientific Name</p>
-                            </div>
-                            &nbsp;&nbsp;
-                            <div class="stay">
-                            <p class="attribute-value">Name of it</p>
-                            </div>
-                        </div><!--ends contem row -->
-                        <div class="row" style="margin-bottom:5px;">
-                            <div class="constant">
-                            <p class="attribute-name">Scientific Name</p>
-                            </div>
-                            &nbsp;&nbsp;
-                            <div class="stay">
-                            <p class="attribute-value">Name of it</p>
-                            </div>
-                        </div><!--ends contem row -->
-                        <div class="row" style="margin-bottom:5px;">
-                            <div class="constant">
-                            <p class="attribute-name">Scientific Name</p>
-                            </div>
-                            &nbsp;&nbsp;
-                            <div class="stay">
-                            <p class="attribute-value">Name of it</p>
-                            </div>
-                        </div><!--ends contem row -->
-                        <div class="row" style="margin-bottom:5px;">
-                            <div class="constant">
-                            <p class="attribute-name">Scientific Name</p>
-                            </div>
-                            &nbsp;&nbsp;
-                            <div class="stay">
-                            <p class="attribute-value">Name of it</p>
-                            </div>
-                        </div><!--ends contem row -->
+                        </div><!--ends contem row -->                
+                        <?php next($cropsdata); ?>
+                       @endfor
                     </div><!--ends col-left -->
 
                     <div class="col-right">
-                        <div class="row" style="margin-bottom:5px;">
-                            <div class="constant">
-                            <p class="attribute-name">Scientific Name</p>
-                            </div>
-                            &nbsp;&nbsp;
-                            <div class="stay">
-                            <p class="attribute-value">Name of it</p>
-                            </div>
-                        </div><!--ends contem row -->
-                        <div class="row" style="margin-bottom:5px;">
-                            <div class="constant">
-                            <p class="attribute-name">Scientific Name</p>
-                            </div>
-                            &nbsp;&nbsp;
-                            <div class="stay">
-                            <p class="attribute-value">Name of it</p>
-                            </div>
-                        </div><!--ends contem row -->
-                        <div class="row" style="margin-bottom:5px;">
-                            <div class="constant">
-                            <p class="attribute-name">Scientific Name</p>
-                            </div>
-                            &nbsp;&nbsp;
-                            <div class="stay">
-                            <p class="attribute-value">Name of it</p>
-                            </div>
-                        </div><!--ends contem row -->
-                        <div class="row" style="margin-bottom:5px;">
-                            <div class="constant">
-                            <p class="attribute-name">Scientific Name</p>
-                            </div>
-                            &nbsp;&nbsp;
-                            <div class="stay">
-                            <p class="attribute-value">Name of it</p>
-                            </div>
-                        </div><!--ends contem row -->
-                        <div class="row" style="margin-bottom:5px;">
-                            <div class="constant">
-                            <p class="attribute-name">Scientific Name</p>
-                            </div>
-                            &nbsp;&nbsp;
-                            <div class="stay">
-                            <p class="attribute-value">Name of it</p>
-                            </div>
-                        </div><!--ends contem row -->
+                            
+                            @for($i=0;$i<6;$i++)
+                            <div class="row" style="margin-bottom:5px;">
+                                <div class="constant">
+                                    <p class="attribute-name">{{trim(key($cropsdata))}}</p>
+                                </div>
+                                &nbsp;&nbsp;
+                                <div class="stay">
+                                    <p class="attribute-value"><?php
+                                        if (is_NULL($cropsdata[key($cropsdata)]))
+                                            echo "NULL";
+                                        else
+                                            echo trim($cropsdata[key($cropsdata)]);
+                                        ?></p>
+                                </div>
+                            </div><!--ends contem row -->                        
+                            <?php next($cropsdata); ?>
+                           @endfor
+                           
+                        
                     </div><!--ends col-right -->
                 </div> <!--end outer row -->
             </div> <!--end table-body -->
@@ -313,99 +288,47 @@ $(document).ready(function(){
                 <div class="expandable">
                         <div class="row">
                             <div class="col-left">
-                                <div class="row" style="margin-bottom:5px;">
-                                    <div class="constant">
-                                    <p class="attribute-name">Scientific Name</p>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <div class="stay">
-                                    <p class="attribute-value">Name of it</p>
-                                    </div>
-                                </div><!--ends contem row -->
-                                <div class="row" style="margin-bottom:5px;">
-                                    <div class="constant">
-                                    <p class="attribute-name">Scientific Name</p>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <div class="stay">
-                                    <p class="attribute-value">Name of it</p>
-                                    </div>
-                                </div><!--ends contem row -->
-                                <div class="row" style="margin-bottom:5px;">
-                                    <div class="constant">
-                                    <p class="attribute-name">Scientific Name</p>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <div class="stay">
-                                    <p class="attribute-value">Name of it</p>
-                                    </div>
-                                </div><!--ends contem row -->
-                                <div class="row" style="margin-bottom:5px;">
-                                    <div class="constant">
-                                    <p class="attribute-name">Scientific Name</p>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <div class="stay">
-                                    <p class="attribute-value">Name of it</p>
-                                    </div>
-                                </div><!--ends contem row -->
-                                <div class="row" style="margin-bottom:5px;">
-                                    <div class="constant">
-                                    <p class="attribute-name">Scientific Name</p>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <div class="stay">
-                                    <p class="attribute-value">Name of it</p>
-                                    </div>
-                                </div><!--ends contem row -->
+                                
+                                    @for($i=0;$i<45;$i++)
+                                    <div class="row" style="margin-bottom:5px;">
+                                        <div class="constant">
+                                            <p class="attribute-name">{{trim(key($cropsdata))}}</p>
+                                        </div>
+                                        &nbsp;&nbsp;
+                                        <div class="stay">
+                                            <p class="attribute-value"><?php
+                                                if (is_NULL($cropsdata[key($cropsdata)]))
+                                                    echo "NULL";
+                                                else
+                                                    echo trim($cropsdata[key($cropsdata)]);
+                                                ?></p>
+                                        </div>
+                                    </div><!--ends contem row -->                        
+                                    <?php next($cropsdata); ?>
+                                   @endfor
+                                
                             </div><!--ends col-left -->
 
                             <div class="col-right">
-                                <div class="row" style="margin-bottom:5px;">
-                                    <div class="constant">
-                                    <p class="attribute-name">Scientific Name</p>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <div class="stay">
-                                    <p class="attribute-value">Name of it</p>
-                                    </div>
-                                </div><!--ends contem row -->
-                                <div class="row" style="margin-bottom:5px;">
-                                    <div class="constant">
-                                    <p class="attribute-name">Scientific Name</p>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <div class="stay">
-                                    <p class="attribute-value">Name of it</p>
-                                    </div>
-                                </div><!--ends contem row -->
-                                <div class="row" style="margin-bottom:5px;">
-                                    <div class="constant">
-                                    <p class="attribute-name">Scientific Name</p>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <div class="stay">
-                                    <p class="attribute-value">Name of it</p>
-                                    </div>
-                                </div><!--ends contem row -->
-                                <div class="row" style="margin-bottom:5px;">
-                                    <div class="constant">
-                                    <p class="attribute-name">Scientific Name</p>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <div class="stay">
-                                    <p class="attribute-value">Name of it</p>
-                                    </div>
-                                </div><!--ends contem row -->
-                                <div class="row" style="margin-bottom:5px;">
-                                    <div class="constant">
-                                    <p class="attribute-name">Scientific Name</p>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <div class="stay">
-                                    <p class="attribute-value">Name of it</p>
-                                    </div>
-                                </div><!--ends contem row -->
+
+                                @for($i=0;$i<44;$i++)
+                            <div class="row" style="margin-bottom:5px;">
+                                <div class="constant">
+                                    <p class="attribute-name">{{trim(key($cropsdata))}}</p>
+                                </div>
+                                &nbsp;&nbsp;
+                                <div class="stay">
+                                    <p class="attribute-value"><?php
+                                        if (is_NULL($cropsdata[key($cropsdata)]))
+                                            echo "NULL";
+                                        else
+                                            echo trim($cropsdata[key($cropsdata)]);
+                                        ?></p>
+                                </div>
+                            </div><!--ends contem row -->                        
+                            <?php next($cropsdata); ?>
+                           @endfor
+                                
                             </div><!--ends col-right -->
                         </div> <!--end outer row -->
                 </div><!--end expandable -->
@@ -480,20 +403,20 @@ $(document).ready(function(){
 </div> <!--ends content wrapper -->
 
 <script>
-var coll = document.getElementsByClassName("expand-link");
-var i;
+    var coll = document.getElementsByClassName("expand-link");
+    var i;
 
-for (i = 0; i < coll.length; i++) {
-coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var expandable = this.previousElementSibling;
-    if (expandable.style.maxHeight){
-        expandable.style.maxHeight = null;
-    } else {
-        expandable.style.maxHeight = expandable.scrollHeight + "px";
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var expandable = this.previousElementSibling;
+        if (expandable.style.maxHeight){
+            expandable.style.maxHeight = null;
+        } else {
+            expandable.style.maxHeight = expandable.scrollHeight + "px";
+        }
+    });
     }
-});
-}
 </script>
 
         <?php /*while (key($cropsdata) != NULL){ ?>

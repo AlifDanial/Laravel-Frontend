@@ -47,10 +47,15 @@ class PagesController extends Controller
         set_time_limit(1000);
         
         $context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
+        $url = 'http://35.199.47.68/db_api/api.php/records/crop_info?';
+        $data = file_get_contents($url, false, $context);
+        $crops = json_decode($data, true)['records'];
         $url = "http://35.199.47.68/db_api/api.php/records/crop_info?filter=cropID,cs,$id";
         $data = file_get_contents($url, false, $context);
         $cropsdata = json_decode($data, true)['records'][0];
-        return view ('pages.cropsdata') -> with('cropsdata', $cropsdata);
+        $uid = $id;
+        
+        return view ('pages.cropsdata') -> with('cropsdata', $cropsdata) -> with('crops',$crops) -> with('uid',$uid);
     }
 
 }

@@ -252,10 +252,10 @@ $(document).ready(function(){
 
           <div class="buttons">
             <div class="buttons-row">
-            <a href="#" class="btn btn-success" style="border-radius:10px;">
+            <a href="#" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;">
             <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
             </a>  
-            <a href="#" class="btn btn-danger" style="border-radius:10px;">
+            <a href="#" class="btn btn-danger" style="border-radius:10px;background-color:#c93030;">
             <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
             </a>  
             <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>  
