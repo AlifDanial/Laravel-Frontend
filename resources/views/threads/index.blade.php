@@ -258,7 +258,7 @@ $(document).ready(function(){
                   </div>
                   <div class="answerer-info">
                     <p class="best-answer">Best Answer by</p>
-                    <a href="#" style="color: black;"><p class="best-answer-name">Ayman Salama</p></a>
+                    <a href="#" style="color: black; text-decoration: none;"><p class="best-answer-name">Ayman Salama, Computer Scientist</p></a>
                     
                   </div>
                   </div><!--end answerer row -->

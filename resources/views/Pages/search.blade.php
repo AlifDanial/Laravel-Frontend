@@ -115,7 +115,7 @@
             @endforeach
 
         <?php } else {
-            echo "<p>Your search '' did not match any threads.</p>
+            echo "<p>Your search '$data' did not match any threads.</p>
                   <p>Suggestions:</p>
                   <ul>
                   <li> Make sure that all words are spelled correctly</li>

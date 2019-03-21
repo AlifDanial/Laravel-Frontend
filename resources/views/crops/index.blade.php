@@ -156,76 +156,7 @@ p{
               </div>
             </a><!--end one card -->
 
-          </div><!--end row of cards --best put loop here i guess?  -- -->
-
-          <div class="row" style="margin-bottom:15px;"> <!--start row of cards -->
-          
-            <a href="#" style="text-decoration:none;color:black;padding-right:15px;"> <!--start cards -->
-              <div class="card text-center" style="width:190px;border-radius:12px;">
-                  <div class="card-header" style="font-family:'montserrat';color:#6F9E76;padding-bottom:5px;padding-top:8px;">
-                   <p>Rafflesia</p>
-                  </div>
-                  <div class="card-body" style="padding-top:10px;font-family:'montserrat';">
-                    <p>12356 threads</p>
-                    <p style="font-size:13px;font-weight:500;">20 asked today</p>
-                    <p style="font-size:13px;font-weight:500;">1000 asked this week</p>
-                  </div>
-              </div>
-            </a><!--end one card -->
-
-            <a href="#" style="text-decoration:none;color:black;padding-right:15px;"> <!--start cards -->
-              <div class="card text-center" style="width:190px;border-radius:12px;">
-                  <div class="card-header" style="font-family:'montserrat';color:#6F9E76;padding-bottom:5px;padding-top:8px;">
-                   <p>Rafflesia</p>
-                  </div>
-                  <div class="card-body" style="padding-top:10px;font-family:'montserrat';">
-                    <p>12356 threads</p>
-                    <p style="font-size:13px;font-weight:500;">20 asked today</p>
-                    <p style="font-size:13px;font-weight:500;">1000 asked this week</p>
-                  </div>
-              </div>
-            </a><!--end one card -->
-
-            <a href="#" style="text-decoration:none;color:black;padding-right:15px;"> <!--start cards -->
-              <div class="card text-center" style="width:190px;border-radius:12px;">
-                  <div class="card-header" style="font-family:'montserrat';color:#6F9E76;padding-bottom:5px;padding-top:8px;">
-                   <p>Rafflesia</p>
-                  </div>
-                  <div class="card-body" style="padding-top:10px;font-family:'montserrat';">
-                    <p>12356 threads</p>
-                    <p style="font-size:13px;font-weight:500;">20 asked today</p>
-                    <p style="font-size:13px;font-weight:500;">1000 asked this week</p>
-                  </div>
-              </div>
-            </a><!--end one card -->
-
-            <a href="#" style="text-decoration:none;color:black;padding-right:15px;"> <!--start cards -->
-              <div class="card text-center" style="width:190px;border-radius:12px;">
-                  <div class="card-header" style="font-family:'montserrat';color:#6F9E76;padding-bottom:5px;padding-top:8px;">
-                   <p>Rafflesia</p>
-                  </div>
-                  <div class="card-body" style="padding-top:10px;font-family:'montserrat';">
-                    <p>12356 threads</p>
-                    <p style="font-size:13px;font-weight:500;">20 asked today</p>
-                    <p style="font-size:13px;font-weight:500;">1000 asked this week</p>
-                  </div>
-              </div>
-            </a><!--end one card -->
-
-            <a href="#" style="text-decoration:none;color:black;padding-right:15px;"> <!--start cards -->
-              <div class="card text-center" style="width:190px;border-radius:12px;">
-                  <div class="card-header" style="font-family:'montserrat';color:#6F9E76;padding-bottom:5px;padding-top:8px;">
-                   <p>Rafflesia</p>
-                  </div>
-                  <div class="card-body" style="padding-top:10px;font-family:'montserrat';">
-                    <p>12356 threads</p>
-                    <p style="font-size:13px;font-weight:500;">20 asked today</p>
-                    <p style="font-size:13px;font-weight:500;">1000 asked this week</p>
-                  </div>
-              </div>
-            </a><!--end one card -->
-
-          </div><!--end row of cards --best put loop here i guess?  -- -->
+          </div><!--end row of cards -->
 
         </div><!--end crop body -->
       </div><!--end page-col-->

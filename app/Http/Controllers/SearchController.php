@@ -21,6 +21,7 @@ class SearchController extends Controller
      */
     public function searchCrops()
     {
+        set_time_limit(1000);
         $context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
         $url = 'http://35.199.47.68/db_api/api.php/records/crop_info?';
         $data = file_get_contents($url, false, $context);
@@ -39,6 +40,7 @@ class SearchController extends Controller
     {
         $text = Input::get ( 'text' );
 
+        set_time_limit(1000);
         $context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
         $url = 'http://35.199.47.68/db_api/api.php/records/crop_info?';
         $data = file_get_contents($url, false, $context);

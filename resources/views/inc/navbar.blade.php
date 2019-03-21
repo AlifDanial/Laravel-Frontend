@@ -198,7 +198,7 @@
         </li>
         <li class="nav-item">
            <!--<a class="nav-link" style="font-family:6 - 1'montserrat';font-size:18px;" href="#">Link</a>-->
-           <a class="navbar-item" href="/crops">
+           <a class="navbar-item" href="/crop">
             <img src="{{URL::asset('/svg/Symbol 4 – 1.svg')}}" class="image-navbar" alt="">
           </a>
         </li>
