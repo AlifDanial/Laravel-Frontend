@@ -23,9 +23,7 @@ Route::get('/logout', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
-    return view('threads.index');
-});
+Route::get('/index', 'ThreadsController@index');
 
 Route::get('/login', function () {
     return view('auth.login');
