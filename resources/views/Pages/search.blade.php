@@ -69,7 +69,9 @@
 }
 .crops-search{
   margin-bottom:30px;
-  height:400px;
+  min-height:200px;
+  max-height:400px;
+
 }
 .threads-search{
   margin-bottom:30px;
