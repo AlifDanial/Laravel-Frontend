@@ -53,9 +53,8 @@ class SearchController extends Controller
                             ->get();
 
         $search_thread = json_decode(json_encode($search_thread, true));
-        $data = array('text' => $text);
 
-        return view ( 'pages.search', $data)->with('search_crop', $search_crop)->with('search_thread', $search_thread);
+        return view ( 'pages.search')->with('search_crop', $search_crop)->with('search_thread', $search_thread)->with('text', $text);
     }
 
 

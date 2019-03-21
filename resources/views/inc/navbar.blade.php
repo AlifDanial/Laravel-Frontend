@@ -207,18 +207,13 @@
       <div class="col-0 col-sm-2 col-xl-4">
           
       </div>
-      <!--<form action="/search/crops" method="post" role="search">
-      {{ csrf_field() }}
-       <input type="text" placeholder="Crop Name" name="cropName">
-       <button type="submit" class="btn btn-default">Search</button> 
-    </form>-->
-      <form class="form-inline" action="/search/thread" method="post" role="search">
-      {{ csrf_field() }}
-       <input class="form-control" type="text" placeholder="Search CFFforum" name="thread" style="border-radius:10px;" autocomplete="off">
-       <input type="submit" 
-       style="position: absolute; left: -9999px; width: 1px; height: 1px;"
-       tabindex="-1" />
-    </form>
+      <form class="form-inline" action="/search" method="post" role="search">
+        {{ csrf_field() }}
+         <input class="form-control" type="text" placeholder="Search CFFforum" name="text" style="border-radius:10px;" autocomplete="off">
+         <input type="submit" 
+         style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+         tabindex="-1" />
+        </form>
       <ul class="navbar-nav">
       <li class="nav-item dropdown">
           <!--<a class="nav-link dropdown-toggle" style="font-family:'montserrat';font-size:15px;" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
