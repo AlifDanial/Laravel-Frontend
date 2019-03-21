@@ -15,7 +15,7 @@ class ThreadsController extends Controller
      */
     public function index()
     {
-        $threads = Thread::orderBy('ThreadCreatedDate', 'desc')->paginate(5);
+        $threads = DB::table('thread')->get();
 
         return view ('threads.index') -> with ('threads', $threads );
     }

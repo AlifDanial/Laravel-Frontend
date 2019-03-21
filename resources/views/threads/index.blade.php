@@ -176,6 +176,7 @@ $(document).ready(function(){
 
   <div class="content-wrapper">
     <div class="grid-page">
+
       <div class="row">
 
       <div class="subbed-crops">
@@ -225,85 +226,32 @@ $(document).ready(function(){
         </div>
       </div> <!-- end subbed-crops-->
     
-    <div class="card-col">
-    <div class="card" style="border-width:2px;border-radius:10px;border-color: #DBDBDB;margin-bottom:15px;"> <!--thread starts -->
-        <div class="card-body" style="padding-top:15px;">
-          <div class="profile-image">
-            <div class="row" style="padding-left:15px;">
-                  <a class="image-profile" href="#">
-                    <img src="{{URL::asset('/svg/amr.svg')}}" class="image-profile" alt="">
-                    </a>
-                    <a href="#" style="color: black; text-decoration: none;"><p class="profile-name">Alif Danial</p></a>
-            </div>            
-        </div>
-        
-          <a href="#" style="color: black; text-decoration: none;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;margin-bottom:0;">What is your question?</h5></a>
+        <div class="card-col">
+          <div class="card" style="border-width:2px;border-radius:10px;border-color: #DBDBDB;margin-bottom:15px;"> <!--thread starts -->
+            <div class="card-body" style="padding-top:15px;">
+              <div class="profile-image">
+                <div class="row" style="padding-left:15px;">
+                      <a class="image-profile" href="#">
+                        <img src="{{URL::asset('/svg/amr.svg')}}" class="image-profile" alt="">
+                        </a>
+                        <a href="#" style="color: black; text-decoration: none;"><p class="profile-name">Alif Danial</p></a>
+                </div>            
+              </div>
+            
+              <a href="/index/create" style="color: black; text-decoration: none;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;margin-bottom:0;">What is your question?</h5></a>
 
-        </div>
-      </div> <!--thread ends -->
-
-      <div class="card" style="border-width:2px;border-radius:10px;border-color: #DBDBDB;margin-bottom:15px;"> <!--thread starts -->
-        <div class="card-body">
-        <a href="#" style="color: black; text-decoration: none;"><h9>Hibiscus</h9></a>
-          <a href="#" style="color: black;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;">What is the protein content of a Hibiscus in Semenyih, Malaysia?</h5> </a>
-
-          <div class="card" style="border-width:2px;border-radius:10px;border-color: #3E920E;">
-            <div class="card-body-inside">
-            <p class="card-text-inside" style="font-family:'poppins';">Ut auctor velit sed consectetur rhoncus. Nunc dictum facilisis felis nec facilisis. Integer nec justo vitae orci cursus fermentum. Fusce semper, mi non tempus congue, velit leo efficitur quam, laoreet venenatis libero felis et lacus. Pellentesque mattis hendrerit nisi gravida hendrerit. Mauris sagittis tincidunt scelerisque. Vivamus lectus erat, dictum et magna quis, iaculis finibus nisl. Aliquam quis ante odio. Etiam tincidunt tellus tristique turpis tincidunt, eget condimentum urna rutrum. Donec maximus consequat dolor, sit amet condimentum ipsum gravida ac. Etiam posuere tellus mauris, et dignissim nisl rutrum quis. Mauris tincidunt ante sed velit maximus, vel tincidunt leo imperdiet. Morbi nec lacus et metus semper porttitor. Sed pellentesque ex at pellentesque scelerisque. </p>               <div class="answerer">
-                  <div class="answerer-row">
-                  <div class="image-answer-div">
-                  <a class="image-answer" href="#">
-                    <img src="{{URL::asset('/svg/ayman.svg')}}" class="image-answerer" alt="">
-                    </a>
-                  </div>
-                  <div class="answerer-info">
-                    <p class="best-answer">Best Answer by</p>
-                    <a href="#" style="color: black; text-decoration: none;"><p class="best-answer-name">Ayman Salama, Computer Scientist</p></a>
-                    
-                  </div>
-                  </div><!--end answerer row -->
-              </div><!--end answerer -->
-            </div><!--end card body inside -->
-          </div> <!--end inner card -->
-
-          <div class="buttons">
-            <div class="buttons-row">
-
-            <a href="#" class="btn btn-success " style="border-radius:10px;">
-            <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
-            </a>  
-            <a href="#" class="btn btn-danger" style="border-radius:10px;">
-            <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
-            </a>  
-            <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>  
-            <div class="sharer">
-                  <div class="sharer-row">
-                  <div class="image-question-div">
-                  <a class="image-question" href="#">
-                    <img src="{{URL::asset('/svg/amr.svg')}}" class="image-questioner" alt="">
-                    </a>
-                  </div>
-                  <div class="questioner-info">
-                  <p class="question-shared">Question Asked by</p>
-                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Amr Ahmed</p></a>
-                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer Scientist</p></a>
-                
-                  </div>
-                </div><!--end answerer row -->
-              </div><!--end answerer -->
             </div>
-          </div><!--end buttons -->
-        </div>
-      </div> <!--thread ends -->
+          </div> <!--thread ends -->
+
+      @foreach($threads as $thread)
 
       <div class="card" style="border-width:2px;border-radius:10px;border-color: #DBDBDB;margin-bottom:15px;"> <!--thread starts -->
         <div class="card-body">
         <a href="#" style="color: black; text-decoration: none;"><h9>Hibiscus</h9></a>
-          <a href="#" style="color: black;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;">What is the protein content of a Hibiscus in Semenyih, Malaysia?</h5></a>
+          <a href="#" style="color: black;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;">{{$thread->ThreadSubject}}</h5></a>
 
           <div class="buttons">
             <div class="buttons-row">
-            <!--<h4 style="float:left;padding-top:6px;padding-bottom:10px;padding-right:5px;font-family:'poppins'">12</h4>-->
             <a href="#" class="btn btn-success" style="border-radius:10px;">
             <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
             </a>  
@@ -320,7 +268,7 @@ $(document).ready(function(){
                   </div>
                   <div class="questioner-info">
                   <p class="question-shared">Question Asked by</p>
-                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Amr Ahmed</p></a>
+                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Username</p></a>
                   <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer Scientist</p></a>
                 
                   </div>
@@ -330,27 +278,29 @@ $(document).ready(function(){
           </div><!--end buttons -->
         </div>
       </div> <!--thread ends -->
+      
+@endforeach
 
+
+{{--   to be implemented later
       <div class="card" style="border-width:2px;border-radius:10px;border-color: #DBDBDB;margin-bottom:15px;"> <!--thread starts -->
         <div class="card-body">
-        <a href="#" style="color: black; text-decoration: none;"><h9>Hibiscus</h9></a>
-          <a href="#" style="color: black;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;">What is the protein content of a Hibiscus in Semenyih, Malaysia?</h5> </a>
-
-          <div class="card" style="border-width:2px;border-radius:10px;border-color: #3E920E;">
+          <a href="#" style="color: black; text-decoration: none;"><h9>Hibiscus</h9></a>
+            <a href="#" style="color: black;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;">What is the protein content of a Hibiscus in Semenyih, Malaysia?</h5> </a>
+          <div class="card" style="border-width:2px;border-radius:10px;border-color: #6F9E76;">
             <div class="card-body-inside">
-            <p class="card-text-inside" style="font-family:'poppins';">Ut auctor velit sed consectetur rhoncus. Nunc dictum facilisis felis nec facilisis. Integer nec justo vitae orci cursus fermentum. Fusce semper, mi non tempus congue, velit leo efficitur quam, laoreet venenatis libero felis et lacus. Pellentesque mattis hendrerit nisi gravida hendrerit. Mauris sagittis tincidunt scelerisque. Vivamus lectus erat, dictum et magna quis, iaculis finibus nisl. Aliquam quis ante odio. Etiam tincidunt tellus tristique turpis tincidunt, eget condimentum urna rutrum. Donec maximus consequat dolor, sit amet condimentum ipsum gravida ac. Etiam posuere tellus mauris, et dignissim nisl rutrum quis. Mauris tincidunt ante sed velit maximus, vel tincidunt leo imperdiet. Morbi nec lacus et metus semper porttitor. Sed pellentesque ex at pellentesque scelerisque. </p>               <div class="answerer">
-                  <div class="answerer-row">
+              <p class="card-text-inside" style="font-family:'poppins';">Ut auctor velit sed consectetur rhoncus. Nunc dictum facilisis felis nec facilisis. Integer nec justo vitae orci cursus fermentum. Fusce semper, mi non tempus congue, velit leo efficitur quam, laoreet venenatis libero felis et lacus. Pellentesque mattis hendrerit nisi gravida hendrerit. Mauris sagittis tincidunt scelerisque. Vivamus lectus erat, dictum et magna quis, iaculis finibus nisl. Aliquam quis ante odio. Etiam tincidunt tellus tristique turpis tincidunt, eget condimentum urna rutrum. Donec maximus consequat dolor, sit amet condimentum ipsum gravida ac. Etiam posuere tellus mauris, et dignissim nisl rutrum quis. Mauris tincidunt ante sed velit maximus, vel tincidunt leo imperdiet. Morbi nec lacus et metus semper porttitor. Sed pellentesque ex at pellentesque scelerisque. </p>               <div class="answerer">
+                <div class="answerer-row">
                   <div class="image-answer-div">
-                  <a class="image-answer" href="#">
-                    <img src="{{URL::asset('/svg/ayman.svg')}}" class="image-answerer" alt="">
+                    <a class="image-answer" href="#">
+                      <img src="{{URL::asset('/svg/ayman.svg')}}" class="image-answerer" alt="">
                     </a>
                   </div>
-                  <div class="answerer-info">
+                    <div class="answerer-info">
                     <p class="best-answer">Best Answer by</p>
                     <a href="#" style="color: black; text-decoration: none;"><p class="best-answer-name">Ayman Salama, Computer Scientist</p></a>
-                    
-                  </div>
-                  </div><!--end answerer row -->
+                    </div>
+                </div><!--end answerer row -->
               </div><!--end answerer -->
             </div><!--end card body inside -->
           </div> <!--end inner card -->
@@ -358,24 +308,24 @@ $(document).ready(function(){
           <div class="buttons">
             <div class="buttons-row">
 
-            <a href="#" class="btn btn-success " style="border-radius:10px;">
-            <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
-            </a>  
-            <a href="#" class="btn btn-danger" style="border-radius:10px;">
-            <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
-            </a>  
-            <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>  
-            <div class="sharer">
-                  <div class="sharer-row">
+              <a href="#" class="btn btn-success " style="border-radius:10px;">
+              <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
+              </a>  
+              <a href="#" class="btn btn-danger" style="border-radius:10px;">
+              <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
+              </a>  
+              <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>  
+              <div class="sharer">
+                <div class="sharer-row">
                   <div class="image-question-div">
-                  <a class="image-question" href="#">
+                    <a class="image-question" href="#">
                     <img src="{{URL::asset('/svg/amr.svg')}}" class="image-questioner" alt="">
                     </a>
                   </div>
-                  <div class="questioner-info">
-                  <p class="question-shared">Question Asked by</p>
-                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Amr Ahmed</p></a>
-                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer Scientist</p></a>
+                    <div class="questioner-info">
+                    <p class="question-shared">Question Asked by</p>
+                    <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Amr Ahmed</p></a>
+                    <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer Scientist</p></a>
                 
                   </div>
                 </div><!--end answerer row -->
@@ -383,66 +333,17 @@ $(document).ready(function(){
             </div>
           </div><!--end buttons -->
         </div>
-      </div> <!--thread ends -->
+      </div> <!--thread ends --> --}}
 
-      <div class="card" style="border-width:2px;border-radius:10px;border-color: #DBDBDB;margin-bottom:15px;"> <!--thread starts -->
-        <div class="card-body">
-        <a href="#" style="color: black; text-decoration: none;"><h9>Hibiscus</h9></a>
-          <a href="#" style="color: black;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;">What is the protein content of a Hibiscus in Semenyih, Malaysia?</h5> </a>
 
-          <div class="card" style="border-width:2px;border-radius:10px;border-color: #3E920E;">
-            <div class="card-body-inside">
-            <p class="card-text-inside" style="font-family:'poppins';">Ut auctor velit sed consectetur rhoncus. Nunc dictum facilisis felis nec facilisis. Integer nec justo vitae orci cursus fermentum. Fusce semper, mi non tempus congue, velit leo efficitur quam, laoreet venenatis libero felis et lacus. Pellentesque mattis hendrerit nisi gravida hendrerit. Mauris sagittis tincidunt scelerisque. Vivamus lectus erat, dictum et magna quis, iaculis finibus nisl. Aliquam quis ante odio. Etiam tincidunt tellus tristique turpis tincidunt, eget condimentum urna rutrum. Donec maximus consequat dolor, sit amet condimentum ipsum gravida ac. Etiam posuere tellus mauris, et dignissim nisl rutrum quis. Mauris tincidunt ante sed velit maximus, vel tincidunt leo imperdiet. Morbi nec lacus et metus semper porttitor. Sed pellentesque ex at pellentesque scelerisque. </p>               <div class="answerer">
-                  <div class="answerer-row">
-                  <div class="image-answer-div">
-                  <a class="image-answer" href="#">
-                    <img src="{{URL::asset('/svg/ayman.svg')}}" class="image-answerer" alt="">
-                    </a>
-                  </div>
-                  <div class="answerer-info">
-                    <p class="best-answer">Best Answer by</p>
-                    <a href="#" style="color: black; text-decoration: none;"><p class="best-answer-name">Ayman Salama, Computer Scientist</p></a>
-                    
-                  </div>
-                  </div><!--end answerer row -->
-              </div><!--end answerer -->
-            </div><!--end card body inside -->
-          </div> <!--end inner card -->
-
-          <div class="buttons">
-            <div class="buttons-row">
-
-            <a href="#" class="btn btn-success " style="border-radius:10px;">
-            <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
-            </a>  
-            <a href="#" class="btn btn-danger" style="border-radius:10px;">
-            <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
-            </a>  
-            <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>  
-            <div class="sharer">
-                  <div class="sharer-row">
-                  <div class="image-question-div">
-                  <a class="image-question" href="#">
-                    <img src="{{URL::asset('/svg/amr.svg')}}" class="image-questioner" alt="">
-                    </a>
-                  </div>
-                  <div class="questioner-info">
-                  <p class="question-shared">Question Asked by</p>
-                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Amr Ahmed</p></a>
-                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer Scientist</p></a>
-                
-                  </div>
-                </div><!--end answerer row -->
-              </div><!--end answerer -->
-            </div>
-          </div><!--end buttons -->
-        </div>
-      </div> <!--thread ends -->
-
-    </div> <!--card column ends -->
+            </div> <!--card column ends -->
     
         </div> <!--end row -->
       </div> <!--end grid page -->
     </div> <!--end row -->
-  </body>
+
+</body>
+
+ 
+
 @endsection
