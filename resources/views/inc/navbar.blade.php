@@ -33,14 +33,14 @@
   padding-right:70px;
 }
 .navbar-brand{
-  
-  font-family:'montserrat';
+
+  font-family:'poppins';
   font-size:23px;
   font-weight:700;
 }
 .image-navbar{
   width:80px;
-  height:40px; 
+  height:40px;
 }
 .navbar-item{
   padding-left:10px;
@@ -78,10 +78,10 @@
   .navbar-item{
   padding-left:4px;
 }
-  
+
 .image-navbar{
   width:50px;
-  height:30px; 
+  height:30px;
 }
 .form-inline input {
    width: 100px;
@@ -116,10 +116,10 @@
   .navbar-item{
   padding-left:4px;
 }
-  
+
 .image-navbar{
   width:50px;
-  height:30px; 
+  height:30px;
 }
 .form-inline input {
    width: 50px;
@@ -157,10 +157,10 @@
   .navbar-item{
   padding-left:5px;
 }
-  
+
 .image-navbar{
   width:60px;
-  height:30px; 
+  height:30px;
 }
 .form-inline input {
    width: 100px;
@@ -178,7 +178,7 @@
   padding-left:3px;
 }
 
- 
+
 }  /*end width 767 condition*/
 
 </style>
@@ -202,15 +202,15 @@
             <img src="{{URL::asset('/svg/Symbol 4 – 1.svg')}}" class="image-navbar" alt="">
           </a>
         </li>
-        
+
       </ul>
       <div class="col-0 col-sm-2 col-xl-4">
-          
+
       </div>
       <form class="form-inline" action="/search" method="post" role="search">
         {{ csrf_field() }}
          <input class="form-control" type="text" placeholder="Search CFFforum" name="text" style="border-radius:10px;" autocomplete="off">
-         <input type="submit" 
+         <input type="submit"
          style="position: absolute; left: -9999px; width: 1px; height: 1px;"
          tabindex="-1" />
         </form>
@@ -228,7 +228,7 @@
         </li>
         <li class="nav-item">
           <div class="button-div">
-          <a href="/index/create" class="btn" style="color:#ffffff;background-color:#6F9E76; border-radius:10px;margin:auto;">Ask a Question</a>    
+          <a href="/index/create" class="btn" style="color:#ffffff;background-color:#6F9E76; border-radius:10px;margin:auto;">Ask a Question</a>
           </div>
         </li>
         </ul>
