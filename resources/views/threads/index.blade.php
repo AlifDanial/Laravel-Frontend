@@ -8,13 +8,13 @@
   -webkit-box-shadow: 0 8px 6px -6px #DBDBDB;
     -moz-box-shadow: 0 8px 6px -6px #DBDBDB;
     box-shadow: 0 8px 6px -6px #DBDBDB;
-    
+
 }
 
 .card-body-inside{ /*style for best answer card body*/
   padding:.8rem;
   flex: 1 1 auto;
-  
+
 }
 .card-body{ /*style for card body*/
   padding-bottom:7px;
@@ -49,7 +49,7 @@
   padding-bottom:15px;
 }
 .answerer-row{ /*style for best answer profile info row*/
-  
+
 }
 .best-answer{ /*style for 'best answer' text next to image*/
   margin:0;
@@ -61,7 +61,7 @@
   margin:0;
   font-size:14px;
   font-family:'noto serif';
-  
+
 }
 .best-answer-occu{ /*style for best answer occupation*/
   margin:0;
@@ -142,7 +142,7 @@ ul,ol{
 @media only screen and  (max-width: 1300px){
   #content-wrapper{ width:10%} /*style for overall page*/
   #grid-page{ width:10%} /*style for overall page*/
-      
+
 }
 
 .card-text-inside .more-text{
@@ -225,7 +225,7 @@ $(document).ready(function(){
         </ul>
         </div>
       </div> <!-- end subbed-crops-->
-    
+
         <div class="card-col">
           <div class="card" style="border-width:2px;border-radius:10px;border-color: #DBDBDB;margin-bottom:15px;"> <!--thread starts -->
             <div class="card-body" style="padding-top:15px;">
@@ -235,9 +235,9 @@ $(document).ready(function(){
                         <img src="{{URL::asset('/svg/amr.svg')}}" class="image-profile" alt="">
                         </a>
                         <a href="#" style="color: black; text-decoration: none;"><p class="profile-name">Alif Danial</p></a>
-                </div>            
+                </div>
               </div>
-            
+
               <a href="/index/create" style="color: black; text-decoration: none;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;margin-bottom:0;">What is your question?</h5></a>
 
             </div>
@@ -248,17 +248,17 @@ $(document).ready(function(){
       <div class="card" style="border-width:2px;border-radius:10px;border-color: #DBDBDB;margin-bottom:15px;"> <!--thread starts -->
         <div class="card-body">
         <a href="#" style="color: black; text-decoration: none;"><h9>Hibiscus</h9></a>
-          <a href="#" style="color: black;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;">{{$thread->ThreadSubject}}</h5></a>
+          <a href="{{ url('threads/'.$thread -> ThreadID) }}" style="color: black;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;">{{$thread->ThreadSubject}}</h5></a>
 
           <div class="buttons">
             <div class="buttons-row">
             <a href="#" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;">
             <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
-            </a>  
+            </a>
             <a href="#" class="btn btn-danger" style="border-radius:10px;background-color:#c93030;">
             <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
-            </a>  
-            <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>  
+            </a>
+            <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>
             <div class="sharer">
                   <div class="sharer-row">
                   <div class="image-question-div">
@@ -270,7 +270,7 @@ $(document).ready(function(){
                   <p class="question-shared">Question Asked by</p>
                   <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Username</p></a>
                   <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer Scientist</p></a>
-                
+
                   </div>
                 </div><!--end answerer row -->
               </div><!--end answerer -->
@@ -278,7 +278,7 @@ $(document).ready(function(){
           </div><!--end buttons -->
         </div>
       </div> <!--thread ends -->
-      
+
 @endforeach
 
 
@@ -310,11 +310,11 @@ $(document).ready(function(){
 
               <a href="#" class="btn btn-success " style="border-radius:10px;">
               <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
-              </a>  
+              </a>
               <a href="#" class="btn btn-danger" style="border-radius:10px;">
               <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
-              </a>  
-              <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>  
+              </a>
+              <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>
               <div class="sharer">
                 <div class="sharer-row">
                   <div class="image-question-div">
@@ -326,7 +326,7 @@ $(document).ready(function(){
                     <p class="question-shared">Question Asked by</p>
                     <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Amr Ahmed</p></a>
                     <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer Scientist</p></a>
-                
+
                   </div>
                 </div><!--end answerer row -->
               </div><!--end answerer -->
@@ -337,13 +337,13 @@ $(document).ready(function(){
 
 
             </div> <!--card column ends -->
-    
+
         </div> <!--end row -->
       </div> <!--end grid page -->
     </div> <!--end row -->
 
 </body>
 
- 
+
 
 @endsection

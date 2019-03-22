@@ -235,7 +235,7 @@ hr.line1{
                     <p class="crop-name">{{$cropName}}</p>
                 </div>
             </div>
-            
+
             <div class="table-body">
                 <div class="row">
                     <div class="col-left">
@@ -254,13 +254,13 @@ hr.line1{
                                         echo trim($cropsdata[key($cropsdata)]);?>
                                         </p>
                             </div>
-                        </div><!--ends contem row -->                
+                        </div><!--ends contem row -->
                         <?php next($cropsdata); ?>
                        @endfor
                     </div><!--ends col-left -->
 
                     <div class="col-right">
-                            
+
                             @for($i=0;$i<6;$i++)
                             <div class="row" style="margin-bottom:5px;">
                                 <div class="constant">
@@ -275,11 +275,11 @@ hr.line1{
                                             echo trim($cropsdata[key($cropsdata)]);
                                         ?></p>
                                 </div>
-                            </div><!--ends contem row -->                        
+                            </div><!--ends contem row -->
                             <?php next($cropsdata); ?>
                            @endfor
-                           
-                        
+
+
                     </div><!--ends col-right -->
                 </div> <!--end outer row -->
             </div> <!--end table-body -->
@@ -288,7 +288,7 @@ hr.line1{
                 <div class="expandable">
                         <div class="row">
                             <div class="col-left">
-                                
+
                                     @for($i=0;$i<45;$i++)
                                     <div class="row" style="margin-bottom:5px;">
                                         <div class="constant">
@@ -303,10 +303,10 @@ hr.line1{
                                                     echo trim($cropsdata[key($cropsdata)]);
                                                 ?></p>
                                         </div>
-                                    </div><!--ends contem row -->                        
+                                    </div><!--ends contem row -->
                                     <?php next($cropsdata); ?>
                                    @endfor
-                                
+
                             </div><!--ends col-left -->
 
                             <div class="col-right">
@@ -325,14 +325,14 @@ hr.line1{
                                             echo trim($cropsdata[key($cropsdata)]);
                                         ?></p>
                                 </div>
-                            </div><!--ends contem row -->                        
+                            </div><!--ends contem row -->
                             <?php next($cropsdata); ?>
                            @endfor
-                                
+
                             </div><!--ends col-right -->
                         </div> <!--end outer row -->
                 </div><!--end expandable -->
-                <label for="1" class="expand-link" style="width:90px;font-family:'noto serif';font-size:14px;margin-left:auto;color:blue;"></label>
+                <label for="1" class="expand-link" style="width:90px;font-family:'noto serif';font-size:14px;margin-left:auto;color:#6F9E76;"></label>
 
         </div>  <!--ends class name = card crop table  -->
 
@@ -361,40 +361,40 @@ hr.line1{
             </div><!-- end page body header -->
 
                 <div class="cards-column">
-                    <div class="card" style="border-width:2px;border-radius:10px;border-color: #DBDBDB;margin-bottom:15px;"> <!--thread starts -->
-                        <div class="card-body">
-                        <a href="#" style="color: black; text-decoration: none;"><h9>Hibiscus</h9></a>
-                        <a href="#" style="color: black;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;">smthg</h5></a>
 
-                        <div class="buttons">
-                            <div class="buttons-row">
-                            <!--<h4 style="float:left;padding-top:6px;padding-bottom:10px;padding-right:5px;font-family:'poppins'">12</h4>-->
-                            <a href="#" class="btn btn-success" style="border-radius:10px;">
-                            <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
-                            </a>
-                            <a href="#" class="btn btn-danger" style="border-radius:10px;">
-                            <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
-                            </a>
-                            <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>
-                            <div class="sharer">
-                                <div class="sharer-row">
-                                <div class="image-question-div">
-                                <a class="image-question" href="#">
-                                    <img src="{{URL::asset('/svg/amr.svg')}}" class="image-questioner" alt="">
-                                    </a>
-                                </div>
-                                <div class="questioner-info">
-                                <p class="question-shared">Question Asked by</p>
-                                <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Amr Ahmed</p></a>
-                                <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer Scientist</p></a>
+    <div class="card" style="border-width:2px;border-radius:10px;border-color: #DBDBDB;margin-bottom:15px;"> <!--thread starts -->
+        <div class="card-body">
+        <a href="#" style="color: black; text-decoration: none;"><h9>Hibiscus</h9></a>
+          <a href="#" style="color: black;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;">What is a hibiscus</h5></a>
 
-                                </div>
-                                </div><!--end answerer row -->
-                            </div><!--end answerer -->
-                            </div>
-                        </div><!--end buttons -->
-                        </div>
-                    </div> <!--thread ends -->
+          <div class="buttons">
+            <div class="buttons-row">
+            <a href="#" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;">
+            <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
+            </a>
+            <a href="#" class="btn btn-danger" style="border-radius:10px;background-color:#c93030;">
+            <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
+            </a>
+            <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>
+            <div class="sharer">
+                  <div class="sharer-row">
+                  <div class="image-question-div">
+                  <a class="image-question" href="#">
+                    <img src="{{URL::asset('/svg/amr.svg')}}" class="image-questioner" alt="">
+                    </a>
+                  </div>
+                  <div class="questioner-info">
+                  <p class="question-shared">Question Asked by</p>
+                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Username</p></a>
+                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer Scientist</p></a>
+
+                  </div>
+                </div><!--end answerer row -->
+              </div><!--end answerer -->
+            </div>
+          </div><!--end buttons -->
+        </div>
+      </div> <!--thread ends -->
 
                 </div> <!--ends cards column -->
         </div> <!--ends page body -->
