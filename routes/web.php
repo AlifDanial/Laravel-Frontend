@@ -15,10 +15,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/home', function () {
-    return view('welcome');
-});
-
 Route::get('/logout', function () {
     return view('welcome');
 });
