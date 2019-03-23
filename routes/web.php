@@ -37,6 +37,14 @@ Route::get('/index/create', function () {
     return view('threads.create');
 });
 
+Route::get('/editprofile', function () {
+    return view('profile.editprofile');
+});
+
+Route::get('/profile', function () {
+    return view('profile.profile');
+});
+
 Route::resource('threads','ThreadsController');
 
 
