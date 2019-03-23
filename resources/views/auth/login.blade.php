@@ -147,6 +147,7 @@
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,300,700,700i,800,900" rel="stylesheet">
     <!--===============================================================================================-->
         <link rel="icon" type="image/png" href="{{ asset('/img/icons/favicon.ico') }}"/>
     <!--===============================================================================================-->
@@ -170,13 +171,12 @@
             <div class="container-login100" style="background-image: url(/img/crops-3.jpg);background-repeat: no-repeat;background-size:100% 100%;">
                 <div class="wrap-login100" style="padding-top:40px;padding-right:110px;padding-left:80px;width:930px;border-radius:20px;">
                     <div class="login100-pic js-tilt" data-tilt>
-                        <img src="{{URL::asset('/img/img-04.png')}}" alt="IMG">
+                        <img src="{{URL::asset('/img/img-02.png')}}" alt="IMG">
                     </div>
 
                     <form class="login100-form validate-form">
                         <span class="login100-form-title">
-                            Login to CFFforum
-                        </span>
+                                <span style="font-size:22px;font-weight:500;font-family:poppins;">Login to </span><span style="color:#6F9E76;font-weight:700;font-family:poppins;">CFFforum</span>                        </span>
 
                         <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                             <input class="input100" type="text" name="email" placeholder="Email">

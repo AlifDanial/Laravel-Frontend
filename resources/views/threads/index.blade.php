@@ -168,7 +168,21 @@ $(document).ready(function(){
 		$(this).remove();
 	});
 });
+
 </script>
+
+<?php
+  function showTotalVote($id){
+    $result = DB::table('thread')
+                            ->selectRaw("ThreadVoteCount")
+                            ->whereRaw("ThreadID = $id")
+                            ->get();
+
+    $result = json_decode($result)[0];
+    return $result -> ThreadVoteCount;
+  }
+
+?>
 
 </head>
 <body>
@@ -252,13 +266,19 @@ $(document).ready(function(){
 
           <div class="buttons">
             <div class="buttons-row">
-            <a href="#" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;">
-            <i class="fas fa-arrow-alt-circle-up fa-lg"><span style="font-family:'montserrat' font-weight:100;">&nbsp·&nbsp0</span></i>
+            <a href="#" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;"> <!-- upvote -->
+              <i class="fas fa-arrow-alt-circle-up fa-lg">
+                <span style="font-family:'poppins';font-size:18px; font-weight:500;">
+                    <?php
+                      echo ". ", (showTotalVote($thread -> ThreadID));
+                    ?>
+                </span>
+              </i>
             </a>
-            <a href="#" class="btn btn-danger" style="border-radius:10px;background-color:#c93030;">
+            <a href="#" class="btn btn-danger" style="border-radius:10px;background-color:#c93030;"> <!-- downvote -->
             <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
             </a>
-            <a href="#" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>
+            <a href="{{ url('threads/'.$thread -> ThreadID) }}" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>
             <div class="sharer">
                   <div class="sharer-row">
                   <div class="image-question-div">
