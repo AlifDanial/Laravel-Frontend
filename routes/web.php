@@ -21,13 +21,13 @@ Route::get('/logout', function () {
 
 Route::get('/index', 'ThreadsController@index');
 
+Route::get('/profile', 'ProfileController@index');
+
 Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/profile', function () {
-    return view('welcome');
-});
+
 
 Route::get('/crops', function () {
     return view('crops.index');
@@ -39,10 +39,6 @@ Route::get('/index/create', function () {
 
 Route::get('/editprofile', function () {
     return view('profile.editprofile');
-});
-
-Route::get('/profile', function () {
-    return view('profile.profile');
 });
 
 Route::resource('threads','ThreadsController');

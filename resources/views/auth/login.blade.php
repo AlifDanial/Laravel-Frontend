@@ -176,7 +176,7 @@
 
                     <form class="login100-form validate-form">
                         <span class="login100-form-title">
-                                <span style="font-size:22px;font-weight:500;font-family:poppins;">Login to </span><span style="color:#6F9E76;font-weight:700;font-family:poppins;">CFFforum</span>                        </span>
+                                <span style="font-size:22px;font-weight:500;font-family:poppins;">Login to </span><span style="color:#6F9E76;font-weight:700;font-family:poppins;">CFFforum</span></span>
 
                         <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                             <input class="input100" type="text" name="email" placeholder="Email">
