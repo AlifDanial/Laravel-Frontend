@@ -12,7 +12,7 @@ class ProfileController extends Controller
 
     public function index()
     {
-        $threads = DB::table('thread')->get();
+        $threads = DB::table('thread')->paginate(4);
 
         return view ('profile.profile') -> with ('threads', $threads );
     }
