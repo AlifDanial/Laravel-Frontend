@@ -30,6 +30,7 @@
         <div class="container-login100" style="background-image: url(/img/crops-4.jpg);background-repeat: no-repeat;background-size:100% 100%;">
             <div class="wrap-login100" style="padding-top:40px;border-radius:20px;">
 
+
             <form class="login100-form validate-form" action="{{route('custom.register')}}" method="post">
                 {{csrf_field()}}
                     <span class="login100-form-title">
@@ -37,28 +38,28 @@
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate = "First Name is required">
-                        <input class="input100" type="text" name="UserFirstName" placeholder="First Name">
+                        <input class="input100" type="text" name="UserFirstName" value="{{old('UserFirstName')}}" placeholder="First Name">
                         <span class="symbol-input100">
                             <i class="fas fa-user" aria-hidden="true"></i>
                         </span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Last Name is required">
-                        <input class="input100" type="text" name="UserLastName" placeholder="Last Name">
+                        <input class="input100" type="text" name="UserLastName" value="{{old('UserLastName')}}" placeholder="Last Name">
                         <span class="symbol-input100">
                             <i class="fas fa-user" aria-hidden="true"></i>
                         </span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Occupation is required">
-                        <input class="input100" type="text" name="UserOccupation" placeholder="Occupation">
+                        <input class="input100" type="text" name="UserOccupation" value="{{old('UserOccupation')}}" placeholder="Occupation">
                         <span class="symbol-input100">
                             <i class="fas fa-briefcase" aria-hidden="true"></i>
                         </span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="UserEmail" placeholder="Email">
+                        <input class="input100" type="text" name="UserEmail" value="{{old('UserEmail')}}" placeholder="Email">
                         <span class="symbol-input100">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
@@ -69,9 +70,15 @@
                          <input class="input100" type="password" name="UserPassword" placeholder="Password" id="pass">
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
-                        </span>   
+                        </span>
                     </div>
-                    
+
+                    @if (count($errors) > 0)
+                    @foreach ($errors->all() as $error)
+                        <p class="alert alert-danger">{{$error}}</p>
+                    @endforeach
+                    @endif
+
                     <div class="container-login100-form-btn">
                         <button class="login100-form-btn">
                             Register

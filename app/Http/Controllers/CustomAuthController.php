@@ -13,9 +13,9 @@ class CustomAuthController extends Controller
     }
     public function register(Request $request){
         $this->validation($request);
-        User::create($request->all()); 
-        return redirect('/')->with('Status','You Are Registered');
-        
+        User::create($request->all());
+        return redirect('/index')->with('Status');
+
     }
     public function validation($request){
         return $this->validate($request,[

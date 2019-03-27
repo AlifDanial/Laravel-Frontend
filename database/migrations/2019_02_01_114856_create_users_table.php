@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration {
 			$table->string('UserPassword');
 			$table->string('UserOccupation');
 			$table->string('UserCountry');
-			$table->dateTime('UserDateJoined')->default('CURRENT_TIMESTAMP(6)');
-			$table->dateTime('UserLastLogin')->default('CURRENT_TIMESTAMP(6)');
+			$table->dateTime('UserDateJoined');
+			$table->dateTime('UserLastLogin');
 			$table->integer('UserEditProfileDate');
 			$table->integer('UserAnswerCount');
 			$table->integer('UserSubscribedThreadsCount');
