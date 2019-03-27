@@ -23,11 +23,18 @@ Route::get('/index', 'ThreadsController@index');
 
 Route::get('/profile', 'ProfileController@index');
 
+Route::get('register', 'CustomAuthController@showRegisterForm')->name('custom.register');
+Route::post('register', 'CustomAuthController@register');
+
+
+
 Route::get('/login', function () {
     return view('auth.login');
 });
 
-
+// Route::get('/register', function () {
+//     return view('auth.register');
+// });
 
 Route::get('/crops', function () {
     return view('crops.index');
@@ -51,7 +58,7 @@ Route::get('/crops/{id}', 'PagesController@showCropsData');   //uncomment for re
 
 Route::any('/search', 'SearchController@search');
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

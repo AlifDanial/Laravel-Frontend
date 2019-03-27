@@ -1,114 +1,124 @@
 <!DOCTYPE html>
-          <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-          <head>
-              <meta charset="utf-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-          
-              <!-- CSRF Token -->
-              <meta name="csrf-token" content="{{ csrf_token() }}">
-          
-              <!-- Scripts -->
-              <script src="{{ asset('js/app.js') }}" defer></script>
-          
-              <!-- Fonts -->
-              <link rel="dns-prefetch" href="//fonts.gstatic.com">
-              <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-          
-              <!-- Styles -->
-              <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-              <style>
-                  .message{
-                  padding-left:27%;
-                  padding-right: 2%;
-                  padding-top:15%;
-                  padding-bottom:0%;
-                   }
+<html lang="en">
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,300,700,700i,800,900" rel="stylesheet">
+<!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{{ asset('/img/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/main.css') }}">
+<!--===============================================================================================-->
+</head>
+<body>
 
-                   
-                    .centered {
-                        position: absolute;
-                        top: 60%;
-                        left: 40%;
-                        transform: translate(-50%, -50%);
-                        color: white;
-                    }
-              </style>
-          </head>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url(/img/crops-4.jpg);background-repeat: no-repeat;background-size:100% 100%;">
+            <div class="wrap-login100" style="padding-top:40px;border-radius:20px;">
 
-        <body>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <form class="login100-form validate-form" action="{{route('custom.register')}}" method="post">
+                {{csrf_field()}}
+                    <span class="login100-form-title">
+                            <span style="font-size:22px;font-weight:500;font-family:poppins;">Create a new Account</span>
+                    </span>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                    <div class="wrap-input100 validate-input" data-validate = "First Name is required">
+                        <input class="input100" type="text" name="UserFirstName" placeholder="First Name">
+                        <span class="symbol-input100">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                    <div class="wrap-input100 validate-input" data-validate = "Last Name is required">
+                        <input class="input100" type="text" name="UserLastName" placeholder="Last Name">
+                        <span class="symbol-input100">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                    <div class="wrap-input100 validate-input" data-validate = "Occupation is required">
+                        <input class="input100" type="text" name="UserOccupation" placeholder="Occupation">
+                        <span class="symbol-input100">
+                            <i class="fas fa-briefcase" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="UserEmail" placeholder="Email">
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                            {{-- <span toggle="#password-field" class="far fa-eye field-icon toggle-password" style="position:absolute;right:11px;bottom:17px;"></span> --}}
+                         <input class="input100" type="password" name="UserPassword" placeholder="Password" id="pass">
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>   
+                    </div>
+                    
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+                            Register
+                        </button>
+                    </div>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-</div> 
 
+
+
+
+<!--===============================================================================================-->
+    <script src="{{ asset('/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+    <script src="{{ asset('/vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+    <script src="{{ asset('/vendor/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+    <script src="{{ asset('/vendor/tilt/tilt.jquery.min.js') }}"></script>
+    <script >
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+<!--===============================================================================================-->
+    <script src="{{ asset('/js/main.js') }}"></script>
+
+    <script>
+
+$(".toggle-password").click(function() {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    var x = document.getElementById("pass");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+    });
+    </script>
 </body>
+</html>
+
+
+
 
