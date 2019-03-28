@@ -221,9 +221,16 @@
             <img src="{{URL::asset('/svg/IMG-20180410-WA0015.svg')}}" class="image-navbar" alt="">
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown07" style="right:-45%;top:115%;">
-            <h5 class="dropdown-header">Profile Name</h5>
+            <a class="dropdown-item"href="/profile" >Profile Name</a>
             <a class="dropdown-item" href="#">Edit Profile Link</a>
-            <a class="dropdown-item" href="#">Logout Link</a>
+            <a class="dropdown-item" href="/logout"
+            onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();">
+             {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                @csrf
+            </form>
           </div>
         </li>
         <li class="nav-item">

@@ -27,7 +27,7 @@
 <body>
 
     <div class="limiter">
-        <div class="container-login100" style="background-image: url(/img/crops-4.jpg);background-repeat: no-repeat;background-size:100% 100%;">
+        <div class="container-login100" style="background-image: url(/img/crops-3.jpg);background-repeat: no-repeat;background-size:100% 100%;">
             <div class="wrap-login100" style="padding-top:40px;border-radius:20px;">
 
 
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="UserEmail" value="{{old('UserEmail')}}" placeholder="Email">
+                        <input class="input100" type="text" name="email" value="{{old('email')}}" placeholder="Email">
                         <span class="symbol-input100">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
@@ -67,7 +67,7 @@
 
                     <div class="wrap-input100 validate-input" data-validate = "Password is required">
                             {{-- <span toggle="#password-field" class="far fa-eye field-icon toggle-password" style="position:absolute;right:11px;bottom:17px;"></span> --}}
-                         <input class="input100" type="password" name="UserPassword" placeholder="Password" id="pass">
+                         <input class="input100" type="password" name="password" placeholder="Password" id="pass">
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
@@ -83,6 +83,15 @@
                         <button class="login100-form-btn">
                             Register
                         </button>
+                    </div>
+
+                    <div class="text-center p-t-12">
+                        <span class="txt1">
+                            Already Have an Account?
+                        </span>
+                        <a class="txt2" href="/login">
+                            Login.
+                        </a>
                     </div>
 
                 </form>

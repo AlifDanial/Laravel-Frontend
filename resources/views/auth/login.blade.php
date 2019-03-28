@@ -31,19 +31,20 @@
                         <img src="{{URL::asset('/img/img-02.png')}}" alt="IMG">
                     </div>
 
-                    <form class="login100-form validate-form">
+                    <form class="login100-form validate-form" action="{{route('custom.login')}}" method="post"> 
+                            {{csrf_field()}}
                         <span class="login100-form-title">
                                 <span style="font-size:22px;font-weight:500;font-family:poppins;">Login to </span><span style="color:#6F9E76;font-weight:700;font-family:poppins;">CFFforum</span></span>
 
                         <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input class="input100" type="text" name="email" placeholder="Email">
+                            <input class="input100" type="text" name="email" value="{{old('email')}}" placeholder="Email">
                             <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </span>
                         </div>
 
                         <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                            <input class="input100" type="password" name="pass" placeholder="Password">
+                            <input class="input100" type="password" name="password" placeholder="Password">
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
                             </span>
@@ -65,7 +66,7 @@
                         </div>
 
                         <div class="text-center p-t-1" style="padding-bottom:10px;">
-                            <a class="txt2" href="#">
+                            <a class="txt2" href="/register">
                                 Create your Account
                                 <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                             </a>

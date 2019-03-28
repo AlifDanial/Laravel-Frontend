@@ -17,12 +17,12 @@ class CreateUsersTable extends Migration {
 			$table->integer('UserID', true);
 			$table->string('UserFirstName');
 			$table->string('UserLastName');
-			$table->string('UserEmail');
-			$table->string('UserPassword');
+			$table->string('email');
+			$table->string('password');
 			$table->string('UserOccupation');
 			$table->string('UserCountry');
-			$table->dateTime('UserDateJoined');
-			$table->dateTime('UserLastLogin');
+			$table->dateTime('UserDateJoined')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->dateTime('UserLastLogin')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 			$table->integer('UserEditProfileDate');
 			$table->integer('UserAnswerCount');
 			$table->integer('UserSubscribedThreadsCount');

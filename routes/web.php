@@ -11,13 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
-
-Route::get('/logout', function () {
-    return view('welcome');
-});
 
 Route::get('/index', 'ThreadsController@index');
 
@@ -26,11 +19,16 @@ Route::get('/profile', 'ProfileController@index');
 Route::get('register', 'CustomAuthController@showRegisterForm')->name('custom.register');
 Route::post('register', 'CustomAuthController@register');
 
+Route::get('login', 'CustomAuthController@showLoginForm')->name('custom.login');
+Route::post('login', 'CustomAuthController@login');
+
+Route::post('logout', 'CustomAuthController@logout');
 
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+
+// Route::get('/login', function () {
+//     return view('auth.login');
+// });
 
 // Route::get('/register', function () {
 //     return view('auth.register');
@@ -38,15 +36,15 @@ Route::get('/login', function () {
 
 Route::get('/crops', function () {
     return view('crops.index');
-});
+})->middleware('auth');;
 
 Route::get('/index/create', function () {
     return view('threads.create');
-});
+})->middleware('auth');;
 
 Route::get('/editprofile', function () {
     return view('profile.editprofile');
-});
+})->middleware('auth');;
 
 Route::resource('threads','ThreadsController');
 

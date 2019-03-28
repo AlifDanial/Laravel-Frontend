@@ -15,8 +15,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'users';
+    public $primaryKey = 'UserID';
+
     protected $fillable = [
-        'UserFirstName','UserLastName', 'UserOccupation','UserEmail', 'UserPassword',
+        'UserFirstName','UserLastName', 'UserOccupation','email', 'password',
     ];
 
     /**
@@ -24,9 +27,22 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    // protected $hidden = [
+    //     'password', 'remember_token',
+    // ];
 
-    public $timestamps = false;
+    const CREATED_AT = 'UserDateJoined';
+    const UPDATED_AT = 'UserLastLogin';
+
+    /**
+   * Overrides the method to ignore the remember token.
+   */
+  public function setAttribute($key, $value)
+  {
+    $isRememberTokenAttribute = $key == $this->getRememberTokenName();
+    if (!$isRememberTokenAttribute)
+    {
+      parent::setAttribute($key, $value);
+    }
+  }
 }
