@@ -14,6 +14,8 @@
 
 Route::get('/index', 'ThreadsController@index');
 
+Route::get('/', 'ThreadsController@index');
+
 Route::get('/profile', 'ProfileController@index');
 
 Route::get('register', 'CustomAuthController@showRegisterForm')->name('custom.register');
