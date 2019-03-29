@@ -53,12 +53,9 @@ Route::resource('threads','ThreadsController');
 
 Route::get('/crop', 'PagesController@showCrops');
 
-Route::get('/crops/{id}', 'PagesController@showCropsData');   //uncomment for real one
-
+Route::get('/crops/{id}', 'PagesController@showCropsData');
 
 Route::any('/search', 'SearchController@search');
-
-// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
