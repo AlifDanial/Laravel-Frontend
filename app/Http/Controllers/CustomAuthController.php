@@ -17,6 +17,7 @@ class CustomAuthController extends Controller
 
     public function showLoginForm()
     {
+        Auth::logout();
         return view('auth.login');
 
     }
@@ -40,7 +41,7 @@ class CustomAuthController extends Controller
                 'email' => 'required|email|max:255',
                 'password' => 'required|max:255',
             ]);
-        
+
             $email = $request['email'];
             $password = $request['password'];
             $credentials = $request->only('email','password');
@@ -52,8 +53,8 @@ class CustomAuthController extends Controller
             return redirect('/login');
 
     }
-    
-        
+
+
     public function validation($request){
         return $this->validate($request,[
             'UserFirstName' => 'required|max:255',

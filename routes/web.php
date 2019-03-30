@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('/', 'ThreadsController@index');
 
 Route::get('/index', 'ThreadsController@index');
 
