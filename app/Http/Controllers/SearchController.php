@@ -34,8 +34,9 @@ class SearchController extends Controller
 
         $cropName = Input::get ( 'cropName' );
         $search_crop = collect($crops)->where ('name_var_lndrce', $cropName);
+        $text = Input::get ( 'cropName' );
 
-        return view ( 'pages.searchCrop' )->with('search_crop', $search_crop);
+        return view ( 'pages.searchCrop' )->with('search_crop', $search_crop)->with('text', $text);
     }
 
     /**

@@ -270,7 +270,7 @@ $(document).ready(function(){
               <i class="fas fa-arrow-alt-circle-up fa-lg">
                 <span style="font-family:'poppins';font-size:18px; font-weight:500;">
                     <?php
-                      echo ". ", (showTotalVote($thread -> ThreadID));
+                      echo " ", (showTotalVote($thread -> ThreadID));
                     ?>
                 </span>
               </i>
