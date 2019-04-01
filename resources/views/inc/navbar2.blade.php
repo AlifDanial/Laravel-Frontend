@@ -193,13 +193,13 @@
         <li class="nav-item">
           <!--<a class="nav-link" style="font-family:7 - 1'montserrat';font-size:18px;" href="#">Home <span class="sr-only">(current)</span></a>-->
           <a class="navbar-item" href="/index">
-            <img src="{{URL::asset('/svg/Symbol 3 – 1.svg')}}" class="image-navbar" alt="">
+            <img src="{{URL::asset('/svg/Symbol 3 – 1-edited.svg')}}" class="image-navbar" alt="" style="font-family:'montserrat';">
           </a>
         </li>
         <li class="nav-item">
            <!--<a class="nav-link" style="font-family:6 - 1'montserrat';font-size:18px;" href="#">Link</a>-->
            <a class="navbar-item" href="/crop">
-            <img src="{{URL::asset('/svg/Symbol 4 – 1.svg')}}" class="image-navbar" alt="">
+            <img src="{{URL::asset('/svg/Symbol 4 – 1-edited.svg')}}" class="image-navbar" alt="">
           </a>
         </li>
 
