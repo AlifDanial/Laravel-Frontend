@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                            {{-- <span toggle="#password-field" class="far fa-eye field-icon toggle-password" style="position:absolute;right:11px;bottom:17px;"></span> --}}
+                            <span toggle="#password-field" class="far fa-eye field-icon toggle-password" style="position:absolute;right:11px;bottom:17px;"></span>
                          <input class="input100" type="password" name="password" placeholder="Password" id="pass">
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>

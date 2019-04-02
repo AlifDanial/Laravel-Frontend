@@ -69,7 +69,7 @@ p{
                       <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
                     </form>
                 </div><!--search form group -->
-                                  
+
               <div class="toggler" style="margin-top:32px;margin-left:570px;margin-right:1px;">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="box-shadow: 0 8px 6px -6px #DBDBDB; -moz-box-shadow: 0 8px 6px -6px #DBDBDB;-webkit-box-shadow: 0 8px 6px -6px #DBDBDB;">
                   <label class="btn btn-secondary text-dark active" style="font-family:'montserrat'; font-size:15px;padding-top:5px;font-weight:500;">
@@ -90,7 +90,7 @@ p{
         <div class="crop-body" style="margin-top:50px;">
 
           <div class="row" style="margin-bottom:15px;"> <!--start row of cards -->
-          
+
             <a href="#" style="text-decoration:none;color:black;padding-right:15px;"> <!--start cards -->
               <div class="card text-center" style="width:190px;border-radius:12px;">
                   <div class="card-header" style="font-family:'montserrat';color:#6F9E76;padding-bottom:5px;padding-top:8px;">
