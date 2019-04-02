@@ -3,6 +3,9 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,300,700,700i,800,900,900i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,500,500i,300,700,700i,800,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,500,500i,300,700,700i,800,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,500,500i,300,700,700i,800,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One:400,400i,500,500i,300,700,700i,800,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Pragati+Narrow:400,400i,500,500i,300,700,700i,800,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,300,700,700i,800,900" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
