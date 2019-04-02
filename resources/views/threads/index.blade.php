@@ -32,6 +32,18 @@
   padding-bottom:10px;
   color:#232b2b;
 }
+.card-title-your{ /*style for card title*/
+  font-size:20px;
+  font-weight:600;
+  padding-bottom:10px;
+  color:#808080;
+}
+
+.card-title-your:hover{
+  color:#4682B4;
+}
+
+
 .content-wrapper{ /*style for overall page*/
   width:1080px;
   margin: 0 auto;
@@ -45,8 +57,8 @@
   height:200px;
 }
 .buttons{ /*style for buttons*/
-  padding-top:20px;
-  padding-bottom:15px;
+  /* padding-top:20px; */
+  /* padding-bottom:15px; */
 }
 .answerer-row{ /*style for best answer profile info row*/
 
@@ -72,18 +84,21 @@
 .question-shared-name{ /*style for question shared name*/
   margin:0;
   font-size:12px;
-  font-family:'noto serif';
+  font-family:'merriweather';
 }
 .question-shared{
   margin-bottom:0px !important;
   font-family:'montserrat';
   font-weight:700;
   font-size:12px;
+  max-width:110px;
 }
 .question-shared-occu{ /*style for question shared occupation*/
   margin:0;
   font-size:12px;
-  font-family:'noto serif';
+  font-family:'merriweather';
+  max-width:110px;
+  
 }
 .sharer{ /*style for sharer info row dic*/
   float:right;
@@ -110,8 +125,10 @@
 }
 .profile-name{ /*style for profile name*/
   margin:0;
-  font-size:14px;
-  font-family:'noto serif';
+  font-size:17px;
+  font-weight:500;
+  color:#808080;
+  font-family:'poppins';
   padding-top:3px;
   padding-left:5px;
 }
@@ -148,6 +165,11 @@ ul,ol{
 .card-text-inside .more-text{
         display: none;
 }
+.answercount{
+  font-size:13px;
+  font-family:'poppins';
+  /* font-weight:500; */
+}
 </style>
 
 <script type="text/javascript">
@@ -167,6 +189,42 @@ $(document).ready(function(){
 		$(this).siblings(".more-text").contents().unwrap();
 		$(this).remove();
 	});
+});
+
+$(document).ready(function(){
+	var maxLength = 13;
+	$(".question-shared-occu").each(function(){
+		var myStr = $(this).text();
+		if($.trim(myStr).length > maxLength){
+			var newStr = myStr.substring(0, maxLength);
+			var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+			$(this).empty().html(newStr);
+			$(this).append(' <a href="javascript:void(0);" class="read-more" style="font-size:10px;">...</a>');
+			// $(this).append('<span class="more-text">' + removedStr + '</span>');
+		}
+	});
+	// $(".read-more").click(function(){
+	// 	$(this).siblings(".more-text").contents().unwrap();
+	// 	$(this).remove();
+	// });
+});
+
+$(document).ready(function(){
+	var maxLength = 10;
+	$(".question-shared-name").each(function(){
+		var myStr = $(this).text();
+		if($.trim(myStr).length > maxLength){
+			var newStr = myStr.substring(0, maxLength);
+			var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+			$(this).empty().html(newStr);
+			$(this).append(' <a href="javascript:void(0);" class="read-more" style="font-size:10px;">...</a>');
+			// $(this).append('<span class="more-text">' + removedStr + '</span>');
+		}
+	});
+	// $(".read-more").click(function(){
+	// 	$(this).siblings(".more-text").contents().unwrap();
+	// 	$(this).remove();
+	// });
 });
 
 </script>
@@ -248,11 +306,11 @@ $(document).ready(function(){
                       <a class="image-profile" href="#">
                         <img src="{{URL::asset('/svg/amr.svg')}}" class="image-profile" alt="">
                         </a>
-                        <a href="#" style="color: black; text-decoration: none;"><p class="profile-name">Alif Danial</p></a>
+                        <a href="/profile" style="color: black;"><p class="profile-name">Alif Danial</p></a>
                 </div>
               </div>
 
-              <a href="/index/create" style="color: black; text-decoration: none;"><h5 class="card-title" style="font-family:'poppins';padding-top:3px;margin-bottom:0;">What is your question?</h5></a>
+              <a href="/index/create" style="color: black; text-decoration: none;"><h5 class="card-title-your" style="font-family:'poppins';padding-top:3px;margin-bottom:0;">What is your question?</h5></a>
 
             </div>
           </div> <!--thread ends -->
@@ -266,7 +324,7 @@ $(document).ready(function(){
 
           <div class="buttons">
             <div class="buttons-row">
-            <a href="#" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;"> <!-- upvote -->
+            <a href="#" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;margin-top:15px;"> <!-- upvote -->
               <i class="fas fa-arrow-alt-circle-up fa-lg">
                 <span style="font-family:'poppins';font-size:18px; font-weight:500;">
                     <?php
@@ -275,10 +333,11 @@ $(document).ready(function(){
                 </span>
               </i>
             </a>
-            <a href="#" class="btn btn-danger" style="border-radius:10px;background-color:#c93030;"> <!-- downvote -->
+            <a href="#" class="btn btn-danger" style="border-radius:10px;background-color:#c93030;margin-top:15px;"> <!-- downvote -->
             <i class="fas fa-arrow-alt-circle-down fa-lg"></i>
             </a>
-            <a href="{{ url('threads/'.$thread -> ThreadID) }}" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;">Answer</a>
+            <a href="{{ url('threads/'.$thread -> ThreadID) }}" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;margin-top:15px;">Answer</a>
+            <div class="btn" style="padding-left:5px;"><p class="answercount" style="margin-top:30px;margin-bottom:0px;">Asked 2 days ago</p></div>
             <div class="sharer">
                   <div class="sharer-row">
                   <div class="image-question-div">
@@ -287,9 +346,9 @@ $(document).ready(function(){
                     </a>
                   </div>
                   <div class="questioner-info">
-                  <p class="question-shared">Question Asked by</p>
+                  <p class="question-shared">Asked by</p>
                   <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-name">Username</p></a>
-                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer Scientist</p></a>
+                  <a href="#" style="color: black; text-decoration: none;"><p class="question-shared-occu">Computer</p></a>
 
                   </div>
                 </div><!--end answerer row -->
