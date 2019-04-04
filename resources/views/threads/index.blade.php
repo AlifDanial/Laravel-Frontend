@@ -3,6 +3,7 @@
 @section('content')
 
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 <style>
 .card{ /*style for both cards*/
   -webkit-box-shadow: 0 8px 6px -6px #DBDBDB;
@@ -226,6 +227,47 @@ $(document).ready(function(){
 	// 	$(this).remove();
 	// });
 });
+async function upvote(userID, threadID){
+  let data = {userID : userID};
+  let res = await fetch(`/upvote/${threadID}` , 
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        body: JSON.stringify(data), 
+    }
+  )
+  if(res.ok){
+    console.log(data);
+    let ele = document.getElementById(`span-${threadID}`);
+    let tempString = ele.innerText.trim();
+    tempString = parseInt(tempString) + 1;
+    ele.innerText = ` ${tempString}`;
+  }
+}
+
+async function downvote(userID, threadID){
+  let data = {userID : userID};
+  let res = await fetch(`/downvote/${threadID}` , 
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        body: JSON.stringify(data), 
+    }
+  )
+  if(res.ok){
+    console.log(data);
+    let ele = document.getElementById(`span-${threadID}`);
+    let tempString = ele.innerText.trim();
+    tempString = parseInt(tempString) - 1;
+    ele.innerText = ` ${tempString}`;
+  }
+}
 
 </script>
 
@@ -326,6 +368,7 @@ $(document).ready(function(){
             <div class="buttons-row">
             <a href="#" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;margin-top:15px;"> <!-- upvote -->
               <i class="fas fa-arrow-alt-circle-up fa-lg">
+                  {{-- <span id="span-{{$thread -> ThreadID}}" style="font-family:'poppins';font-size:18px; font-weight:500;"> --}}
                 <span style="font-family:'poppins';font-size:18px; font-weight:500;">
                     <?php
                       echo " ", (showTotalVote($thread -> ThreadID));
@@ -359,6 +402,7 @@ $(document).ready(function(){
       </div> <!--thread ends -->
 
 @endforeach
+{{$threads -> links()}}
 
 
 {{--   to be implemented later
