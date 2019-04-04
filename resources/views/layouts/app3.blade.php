@@ -21,12 +21,12 @@
 .bg-color{
     background:#fafafa;
 }
-    
+
     </style>
 </head>
 <body class="bg-color">
         @include ('inc.navbar3')
-        
+
         <!--here for menu-->
         <div class="message">
         @include('inc.messages')
@@ -34,12 +34,12 @@
         <div class="content">
         @yield('content')
         </div>
-
+        @include('inc.footer')
         <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
         CKEDITOR.replace( 'article-ckeditor' );
     </script>
 
-   
+
 </body>
 </html>

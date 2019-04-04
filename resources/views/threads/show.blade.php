@@ -89,6 +89,16 @@ p{margin:0;}
    padding-left:10px;
    margin-top:9px;
  }
+ .checkbox ~ .expand-link:before {
+  content: '(Show more)';
+}
+
+.checkbox:checked ~ .expand-link:before {
+  content: '(Show less)';
+}
+.checkbox {
+  display: none;
+}
 </style>
 </head>
 <script type="text/javascript">
@@ -109,19 +119,19 @@ p{margin:0;}
       $(this).remove();
     });
   });
-  
+
   </script>
-<div class="content-wrapper">  
+<div class="content-wrapper">
       <div class="page-grid">
-            <div class='card-body'>  
+            <div class='card-body'>
               <h5 class="crop">Hibiscus</h5>
-              <h2 class="title">{{$thread->ThreadSubject}}</h2>                                          
+              <h2 class="title">{{$thread->ThreadSubject}}</h2>
                   <p class='desc'>{!!$thread->ThreadDescription!!}</p>
 
-                  
+
                       <div class="buttons">
                           <div class="buttons-row" style="padding-top:20px;">
-                          <a href="{{ url('threads/'.$thread -> ThreadID) }}" class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;margin-top:15px;">Answer</a>
+                            <a class="btn btn-light" style="border-radius:10px;border-color: #DBDBDB;border-width:2px;margin-top:15px;">Answer</a>
                           <a href="/threads/{{$thread->ThreadID}}/edit" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;margin-top:15px;"> Edit </a>
                           <a href="#" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;margin-top:15px;"> <!-- upvote -->
                             <i class="fas fa-arrow-alt-circle-up fa-lg">
@@ -149,8 +159,10 @@ p{margin:0;}
                           </div>
                       </div>
                   </div>
-              </div>                                                         
+              </div>
           <hr class="line1"> <!--horizontal line -->
+
+
           {!!Form::open(['action' => ['ThreadsController@destroy',$thread->ThreadID], 'method' => 'POST', 'class' => 'float-right' ]) !!}
           {{Form::hidden('_method', 'DELETE')}}
           {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
@@ -165,7 +177,7 @@ p{margin:0;}
                   <p class="answer-text">Aepe qui cupiditate dolor ratione sequi.Aepe qui cupiditate dolor ratione sequi.Aepe qui cupiditate dolor ratione sequi.Aepe qui cupiditate dolor ratione sequi.Aepe qui cupiditate dolor ratione sequi.Aepe qui cupiditate dolor ratione sequi.Aepe qui cupiditate dolor ratione sequi.Aepe qui cupiditate dolor ratione sequi.</p>
 
                   <div class="buttons">
-                      <div class="buttons-row" style="padding-top:20px;">                    
+                      <div class="buttons-row" style="padding-top:20px;">
                       <a href="#" class="btn btn-success" style="border-radius:10px;background-color:#6F9E76;margin-top:15px;"> <!-- upvote -->
                         <i class="fas fa-arrow-alt-circle-up fa-lg">
                           <span style="font-family:'poppins';font-size:18px; font-weight:500;">
@@ -192,8 +204,8 @@ p{margin:0;}
                             </div>
                         </div>
 
-                  </div> 
-                </div> 
+                  </div>
+                </div>
 
               <div class="card" style="border-width:2px;border-radius:0px;border-color: #DBDBDB;margin-top:20px;">
                 <div class="card-body" style="padding:12px;">
@@ -210,23 +222,44 @@ p{margin:0;}
                              tabindex="-1" />
                             </form>
                    </div>
-                  
+
 
                 </div>
               </div>
 
           </div> <!-- end card body-->
         </div> <!-- end card -->
-        
 
 
-          
+        <div class="expandable">
+            <p class="q-desc" style="margin-top:50px;"> {{Form::label('question description', 'Answer Question')}} </p>
+            {{Form::textarea('question description', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'autocomplete' => 'off' ])}}
+         </div>
+         <label for="1" class="expand-link" style="width:90px;font-family:'noto serif';font-size:14px;margin-left:auto;color:#6F9E76;"></label>
 
-          
-    
-   
 
-        
+
+
+
+
+
     </div>
 </div>
+
+<script>
+    var coll = document.getElementsByClassName("expand-link");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var expandable = this.previousElementSibling;
+        if (expandable.style.maxHeight){
+            expandable.style.maxHeight = null;
+        } else {
+            expandable.style.maxHeight = expandable.scrollHeight + "px";
+        }
+    });
+    }
+</script>
 @endsection

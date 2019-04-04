@@ -1,4 +1,5 @@
 <head>
+    <link rel="shortcut icon" href="{{URL::asset('/img/icon/favicon.ico')}}" type="image/x-icon" />
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,300,700,700i,800,900,900i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,500,500i,300,700,700i,800,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,500,500i,300,700,700i,800,900" rel="stylesheet">
